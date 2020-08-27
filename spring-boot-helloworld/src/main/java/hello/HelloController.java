@@ -1,5 +1,6 @@
 package hello;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -10,5 +11,8 @@ public class HelloController {
     public String index() {
         return "Greetings from Spring Boot!";
     }
+
+    @RequestMapping("/{name}")
+    public String welcome(@PathVariable String name){ return "welcome "+name ;}
     
 }
